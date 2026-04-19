@@ -1,0 +1,270 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Uuidcombate'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Uuidcombate'
+annotate entity ZZC_COMBATE with
+{
+  // Level 1
+  @UI.facet: [ {
+    id: 'idCol01',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #COLLECTION
+  },
+  {
+    id: 'idIdent01',
+    label: 'Combate',
+    parentId: 'idCol01',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE,
+    targetQualifier: 'idIdent01'
+  },
+  {
+    id: 'idCol02',
+    parentId: 'idCol01',
+    purpose: #STANDARD,
+    position: 20 ,
+    type: #COLLECTION
+  },
+  {
+    id: 'idPlayer01',
+    parentId: 'idCol02',
+    label: 'Player 01',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE,
+    targetQualifier: 'idPlayer01'
+  },
+  {
+    id: 'idMascota01',
+    parentId: 'idCol02',
+    label: 'Mascota 01',
+    purpose: #STANDARD,
+    position: 20 ,
+    type: #IDENTIFICATION_REFERENCE,
+    targetQualifier: 'idMascota01'
+  },
+  {
+    id: 'idCol03',
+    parentId: 'idCol01',
+    purpose: #STANDARD,
+    position: 30 ,
+    type: #COLLECTION
+  },
+  {
+    id: 'idPlayer02',
+    parentId: 'idCol03',
+    label: 'Player 02',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE,
+    targetQualifier: 'idPlayer02'
+  },
+  {
+    id: 'idMascota02',
+    parentId: 'idCol03',
+    label: 'Mascota 02',
+    purpose: #STANDARD,
+    position: 20 ,
+    type: #IDENTIFICATION_REFERENCE,
+    targetQualifier: 'idMascota02'
+  }
+  ]
+
+  @EndUserText.label: 'Uuid Combate'
+  @UI.identification: [{ position: 10, label: 'Uuid Combate', qualifier: 'idIdent01' }]
+  @UI.lineItem: [{ position: 10, label: 'Uuid Combate' }]
+  @UI.selectionField: [{ position: 10 }]
+  Uuidcombate;
+
+  /* Player 01 */
+  @EndUserText.label: 'Uuid Player 01'
+  @UI.identification: [{ position: 10, label: 'Uuid Player 01', qualifier: 'idPlayer01' }]
+  @UI.lineItem: [{ position: 10, label: 'Uuid Player 01' }]
+  @UI.selectionField: [{ position: 20 }]
+  @Consumption.valueHelpDefinition: [{
+    entity:{
+      name: 'ZZ_HLP_PLAYER',
+      element: 'Uudidplayer'
+    },
+    additionalBinding: [{  
+      localElement: 'Uuidplayer01',
+      element: 'Uudidplayer'
+    }]
+  }] 
+  Uuidplayer01;
+
+  @EndUserText.label: 'Name Player 01'
+  @UI.identification: [{ position: 20, label: 'Name Player 01', qualifier: 'idPlayer01' }]
+  @UI.lineItem: [{ position: 20, label: 'Name Player 01' }]
+  @UI.selectionField: [{ position: 30 }]
+  @Consumption.valueHelpDefinition: [{
+    entity:{
+      name: 'ZZ_HLP_PLAYER',
+      element: 'Nameplayer'
+    }
+  }]   
+  NamePlayer01;
+
+  @EndUserText.label: 'Victories Player 01'
+  @UI.identification: [{ position: 30, label: 'Victories Player 01', qualifier: 'idPlayer01' }]
+  @UI.lineItem: [{ position: 30, label: 'Victories Player 01' }]
+  VictoriesPlayer01;
+
+  @EndUserText.label: 'Losses Player 01'
+  @UI.identification: [{ position: 40, label: 'Losses Player 01', qualifier: 'idPlayer01' }]
+  @UI.lineItem: [{ position: 40, label: 'Losses Player 01' }]
+  LossesPlayer01;
+
+  @EndUserText.label: 'Marcador Player 01'
+  @UI.identification: [{ position: 30, label: 'Marcador Player 01', qualifier: 'idPlayer01' }]
+  @UI.lineItem: [{ position: 30, label: 'Marcador Player 01' }]
+  Marcadorplayer01;
+
+  /* Mascota 01 */
+  @EndUserText.label: 'Uuid Mascota 01'
+  @UI.identification: [{ position: 10, label: 'Uuid Mascota 01', qualifier: 'idMascota01' }]
+  @UI.lineItem: [{ position: 10, label: 'Uuid Mascota 01' }]
+  @UI.selectionField: [{ position: 40 }]
+  Uuidmascota01;
+
+  @EndUserText.label: 'Name Mascota 01'
+  @UI.identification: [{ position: 20, label: 'Name Mascota 01', qualifier: 'idMascota01' }]
+  @UI.lineItem: [{ position: 20, label: 'Name Mascota 01' }]
+  @UI.selectionField: [{ position: 50 }]
+  NameMascota01;
+
+  @EndUserText.label: 'Ataque Mascota 01'
+  @UI.identification: [{ position: 30, label: 'Ataque Mascota 01', qualifier: 'idMascota01' }]
+  @UI.lineItem: [{ position: 30, label: 'Ataque Mascota 01' }]
+  AtaqueMascota01;
+
+  @EndUserText.label: 'Defensa Mascota 01'
+  @UI.identification: [{ position: 40, label: 'Defensa Mascota 01', qualifier: 'idMascota01' }]
+  @UI.lineItem: [{ position: 40, label: 'Defensa Mascota 01' }]
+  DefensaMascota01;
+
+  @EndUserText.label: 'Vida Mascota 01'
+  @UI.identification: [{ position: 50, label: 'Vida Mascota 01', qualifier: 'idMascota01' }]
+  @UI.lineItem: [{ position: 50, label: 'Vida Mascota 01' }]
+  VidaMascota01;
+
+  @EndUserText.label: 'Nivel Mascota 01'
+  @UI.identification: [{ position: 60, label: 'Nivel Mascota 01', qualifier: 'idMascota01' }]
+  @UI.lineItem: [{ position: 60, label: 'Nivel Mascota 01' }]
+  NivelMascota01;
+
+  @EndUserText.label: 'Puntos Mascota 01'
+  @UI.identification: [{ position: 70, label: 'Puntos Mascota 01', qualifier: 'idMascota01' }]
+  @UI.lineItem: [{ position: 70, label: 'Puntos Mascota 01' }]
+  PuntosMascota01;
+
+  /* Player 02 */
+  @EndUserText.label: 'Uuid Player 02'
+  @UI.identification: [{ position: 10, label: 'Uuid Player 02', qualifier: 'idPlayer02' }]
+  @UI.lineItem: [{ position: 10, label: 'Uuid Player 02' }]
+  @UI.selectionField: [{ position: 60 }]
+  @Consumption.valueHelpDefinition: [{
+    entity:{
+      name: 'ZZ_HLP_PLAYER',
+      element: 'Uudidplayer'
+    },
+    additionalBinding: [{  
+      localElement: 'Uuidplayer02',
+      element: 'Uudidplayer'
+    }]
+  }]  
+  Uuidplayer02;
+
+  @EndUserText.label: 'Name Player 02'
+  @UI.identification: [{ position: 20, label: 'Name Player 02', qualifier: 'idPlayer02' }]
+  @UI.lineItem: [{ position: 20, label: 'Name Player 02' }]
+  @UI.selectionField: [{ position: 70 }]
+  @Consumption.valueHelpDefinition: [{
+    entity:{
+      name: 'ZZ_HLP_PLAYER',
+      element: 'Nameplayer'
+    }
+  }]  
+  NamePlayer02;
+
+  @EndUserText.label: 'Victories Player 02'
+  @UI.identification: [{ position: 30, label: 'Victories Player 02', qualifier: 'idPlayer02' }]
+  @UI.lineItem: [{ position: 30, label: 'Victories Player 02' }]
+  VictoriesPlayer02;
+
+  @EndUserText.label: 'Losses Player 02'
+  @UI.identification: [{ position: 40, label: 'Losses Player 02', qualifier: 'idPlayer02' }]
+  @UI.lineItem: [{ position: 40, label: 'Losses Player 02' }]
+  LossesPlayer02;
+
+  @EndUserText.label: 'Marcador Player 02'
+  @UI.identification: [{ position: 30, label: 'Marcador Player 02', qualifier: 'idPlayer02' }]
+  @UI.lineItem: [{ position: 30, label: 'Marcador Player 02' }]
+  Marcadorplayer02;
+
+  /* Mascota 02 */
+  @EndUserText.label: 'Uuid Mascota 02'
+  @UI.identification: [{ position: 10, label: 'Uuid Mascota 02', qualifier: 'idMascota02' }]
+  @UI.lineItem: [{ position: 10, label: 'Uuid Mascota 02' }]
+  @UI.selectionField: [{ position: 80 }]
+  Uuidmascota02;
+
+  @EndUserText.label: 'Name Mascota 02'
+  @UI.identification: [{ position: 20, label: 'Name Mascota 02', qualifier: 'idMascota02' }]
+  @UI.lineItem: [{ position: 20, label: 'Name Mascota 02' }]
+  @UI.selectionField: [{ position: 90 }]
+  NameMascota02;
+
+  @EndUserText.label: 'Ataque Mascota 02'
+  @UI.identification: [{ position: 30, label: 'Ataque Mascota 02', qualifier: 'idMascota02' }]
+  @UI.lineItem: [{ position: 30, label: 'Ataque Mascota 02' }]
+  AtaqueMascota02;
+
+  @EndUserText.label: 'Defensa Mascota 02'
+  @UI.identification: [{ position: 40, label: 'Defensa Mascota 02', qualifier: 'idMascota02' }]
+  @UI.lineItem: [{ position: 40, label: 'Defensa Mascota 02' }]
+  DefensaMascota02;
+
+  @EndUserText.label: 'Vida Mascota 02'
+  @UI.identification: [{ position: 50, label: 'Vida Mascota 02', qualifier: 'idMascota02' }]
+  @UI.lineItem: [{ position: 50, label: 'Vida Mascota 02' }]
+  VidaMascota02;
+
+  @EndUserText.label: 'Nivel Mascota 02'
+  @UI.identification: [{ position: 60, label: 'Nivel Mascota 02', qualifier: 'idMascota02' }]
+  @UI.lineItem: [{ position: 60, label: 'Nivel Mascota 02' }]
+  NivelMascota02;
+
+  @EndUserText.label: 'Puntos Mascota 03'
+  @UI.identification: [{ position: 70, label: 'Puntos Mascota 03', qualifier: 'idMascota02' }]
+  @UI.lineItem: [{ position: 70, label: 'Puntos Mascota 03' }]
+  PuntosMascota02;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  /* Associations */
+  @UI.hidden: true
+  _Mascota01;
+
+  @UI.hidden: true
+  _Mascota02;
+
+  @UI.hidden: true
+  _Player01;
+
+  @UI.hidden: true
+  _Player02;
+}

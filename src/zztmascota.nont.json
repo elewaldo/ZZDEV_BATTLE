@@ -1,0 +1,10 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "ZZTMASCOTA",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZZTMASCOTA",
+  "sapObjectType": "ZZTMASCOTA"
+}

@@ -1,0 +1,12 @@
+@EndUserText.label: 'ZZI_PLAYER'
+@MappingRole: true
+define role ZZI_PLAYER {
+  grant select on ZZI_PLAYER
+  where TRUE;
+
+  grant select on ZZI_MASCOTA
+  where TRUE;
+  
+  grant select on ZZI_COMBATE
+  where TRUE;  
+}

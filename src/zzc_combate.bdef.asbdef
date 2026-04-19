@@ -1,0 +1,17 @@
+projection;
+strict ( 2 );
+use draft;
+use side effects;
+
+define behavior for ZZC_COMBATE alias COMBATE
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Activate;
+  use action Discard;
+  use action Edit;
+  use action Resume;
+  use action Prepare;
+}

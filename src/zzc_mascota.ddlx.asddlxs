@@ -1,0 +1,78 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Namemascota'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Uudidplayer'
+annotate entity ZZC_MASCOTA
+    with 
+{
+    @UI.facet: [ {
+      label: 'General Information',
+      id: 'GeneralInfo',
+      purpose: #STANDARD,
+      position: 10 ,
+      type: #IDENTIFICATION_REFERENCE
+    }]
+    
+    @EndUserText.label: 'Uuid Mascota'
+    @UI.identification: [{ position: 10 }]    
+    @UI.lineItem: [{ position: 10 }]
+    @UI.selectionField: [{ position: 10 }]    
+    Uuidmascota;
+    
+    @EndUserText.label: 'Uuid Player'
+    @UI.identification: [{ position: 20 }]    
+    @UI.lineItem: [{ position: 20 }]
+    @UI.selectionField: [{ position: 20 }]    
+    Uudidplayer;
+    
+    @EndUserText.label: 'Name Mascota'
+    @UI.identification: [{ position: 30 }]    
+    @UI.lineItem: [{ position: 30 }]
+    @UI.selectionField: [{ position: 30 }]    
+    Namemascota;
+    
+    @EndUserText.label: 'Ataque'
+    @UI.identification: [{ position: 40 }]    
+    @UI.lineItem: [{ position: 40 }]
+    @UI.selectionField: [{ position: 40 }]    
+    Ataque;
+    
+    @EndUserText.label: 'Defensa'
+    @UI.identification: [{ position: 50 }]    
+    @UI.lineItem: [{ position: 50 }]
+    @UI.selectionField: [{ position: 50 }]    
+    Defensa;
+    
+    @EndUserText.label: 'Vida'
+    @UI.identification: [{ position: 60 }]    
+    @UI.lineItem: [{ position: 60 }] 
+    Vida;
+    
+    @EndUserText.label: 'Nivel'
+    @UI.identification: [{ position: 70 }]    
+    @UI.lineItem: [{ position: 70 }]
+    @UI.selectionField: [{ position: 70 }]    
+    Nivel;
+    
+    @EndUserText.label: 'Puntos'
+    @UI.identification: [{ position: 80 }]    
+    @UI.lineItem: [{ position: 80 }]  
+    Puntos;
+    
+    @UI.hidden: true
+    CreatedBy;
+    
+    @UI.hidden: true
+    CreatedAt;
+    
+    @UI.hidden: true
+    LastChangedBy;
+    
+    @UI.hidden: true
+    LastChangedAt;
+    
+    @UI.hidden: true
+    LocalLastChangedAt;
+    
+}

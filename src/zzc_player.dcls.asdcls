@@ -1,0 +1,10 @@
+@EndUserText.label: 'ZZC_PLAYER'
+@MappingRole: true
+define role ZZC_PLAYER {
+  grant select on ZZC_PLAYER
+  where INHERITING CONDITIONS FROM ENTITY ZZI_PLAYER REPLACING { ROOT WITH _BaseEntity };
+  grant select on ZZC_MASCOTA
+  where INHERITING CONDITIONS FROM ENTITY ZZC_MASCOTA;
+  grant select on ZZC_COMBATE
+  where INHERITING CONDITIONS FROM ENTITY ZZC_COMBATE;  
+}

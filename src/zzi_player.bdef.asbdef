@@ -1,0 +1,85 @@
+managed implementation in class ZZBP_I_PLAYER unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZZI_PLAYER alias PLAYER
+persistent table zzt_player
+extensible
+draft table zzt_playerd
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+{
+  field ( readonly )
+  Uudidplayer,
+  Victories,
+  Losses,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+  field ( numbering : managed )
+  Uudidplayer;
+
+  create;
+  update;
+  delete;
+
+  association _Mascota { create; with draft; }
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zzt_player corresponding extensible
+    {
+      Uudidplayer        = UUDIDPLAYER;
+      Nameplayer         = NAMEPLAYER;
+      Victories          = VICTORIES;
+      Losses             = LOSSES;
+      CreatedBy          = CREATED_BY;
+      CreatedAt          = CREATED_AT;
+      LastChangedBy      = LAST_CHANGED_BY;
+      LastChangedAt      = LAST_CHANGED_AT;
+      LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    }
+
+}
+
+define behavior for ZZI_MASCOTA alias _Mascota
+persistent table zzt_mascota
+extensible
+draft table zzt_mascotad
+lock dependent by _Player
+authorization dependent by _Player
+{
+  update;
+  delete;
+
+  association _Player { with draft; }
+
+  field ( readonly : update ) Uuidmascota;
+  field ( numbering : managed ) Uuidmascota;
+  field ( readonly ) Uudidplayer;
+
+  mapping for zzt_mascota corresponding extensible
+    {
+      Ataque             = ataque;
+      CreatedAt          = created_at;
+      CreatedBy          = created_by;
+      Defensa            = defensa;
+      LastChangedAt      = last_changed_at;
+      LastChangedBy      = last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      Namemascota        = namemascota;
+      Nivel              = nivel;
+      Puntos             = puntos;
+      Uudidplayer        = uudidplayer;
+      Uuidmascota        = uuidmascota;
+      Vida               = vida;
+    }
+}

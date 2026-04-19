@@ -1,0 +1,30 @@
+projection implementation in class ZZBP_C_PLAYER unique;
+strict ( 2 );
+extensible;
+use draft;
+use side effects;
+define behavior for ZZC_PLAYER alias PLAYER
+extensible
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use association _Mascota { create; with draft; }
+
+}
+
+define behavior for zzc_mascota alias MASCOTA
+{
+  use update;
+  use delete;
+
+  use association _Player { with draft; }
+}

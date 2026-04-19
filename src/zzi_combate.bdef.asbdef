@@ -1,0 +1,71 @@
+managed implementation in class zbp_zi_combate unique;
+strict ( 2 );
+with draft;
+extensible;
+
+define behavior for ZZI_COMBATE alias COMBATE
+persistent table zzt_combate
+extensible
+draft table zzt_combated
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( instance )
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly )
+    Uuidcombate,
+    NamePlayer01,
+    NamePlayer02,
+    VictoriesPlayer01,
+    VictoriesPlayer02,
+    LossesPlayer01,
+    LossesPlayer02,
+    NameMascota01,
+    NameMascota02,
+    AtaqueMascota01,
+    AtaqueMascota02,
+    DefensaMascota01,
+    DefensaMascota02,
+    VidaMascota01,
+    VidaMascota02,
+    NivelMascota01,
+    NivelMascota02,
+    PuntosMascota01,
+    PuntosMascota02,
+    Marcadorplayer01,
+    Marcadorplayer02;
+
+  field ( numbering : managed ) Uuidcombate;
+  field ( readonly : update ) Uuidplayer01, Uuidplayer02, Uuidmascota01, Uuidmascota02;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  side effects {
+    field Uuidplayer01 affects field NamePlayer01, field VictoriesPlayer01, field LossesPlayer01;
+    field Uuidplayer02 affects field NamePlayer02, field VictoriesPlayer02, field LossesPlayer02;
+  }
+
+  //determination getDataPlayer on modify { field Uuidplayer01; field Uuidplayer02; }
+
+  mapping for zzt_combate corresponding extensible
+    {
+      Uuidcombate        = uuidcombate;
+      Uuidplayer01       = uuidplayer01;
+      Marcadorplayer01   = marcadorplayer01;
+      Uuidmascota01      = uuidmascota01;
+      Marcadorplayer02   = marcadorplayer02;
+      Uuidplayer02       = uuidplayer02;
+      Uuidmascota02      = uuidmascota02;
+      CreatedAt          = created_at;
+      CreatedBy          = created_by;
+      LastChangedAt      = last_changed_at;
+      LastChangedBy      = last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+}
