@@ -8,7 +8,8 @@
 }
 define service ZZUI_PLAYER_O4
   provider contracts odata_v4_ui {
-  expose ZZC_PLAYER  as PLAYER;
-  expose ZZC_MASCOTA as MASCOTA;
-  expose ZZC_COMBATE as COMBATE;
+  expose ZZC_PLAYER    as PLAYER;
+  expose ZZC_MASCOTA   as MASCOTA;
+  expose ZZC_COMBATE   as COMBATE;
+  expose ZZC_CLIENTE02 as CLIENTE02;
 }
